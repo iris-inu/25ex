@@ -27,40 +27,31 @@
 
 访问微信公众平台官网首页（mp.weixin.qq.com），点击右上角“立即注册”按钮进入账号类型选择页面，选择“小程序”。
 
-<center><image src="images/1.png" width="600" height="400"/></center>
 
 按照页面指引完成信息登记后，完成注册。
 
-<center><image src="images/2.png" width="600" height="400"/></center>
 
 ### 2.1.2小程序信息完善
 
 账号注册完成后,需要完善小程序的基本信息。
 
-<center><image src="images/3.png" width="500" height="600"/></center>
 
 ### 2.1.3小程序开发工具
 在微信公众平台官网可以找到微信开发者工具的下载。  
 
-<center><image src="images/4.png" width="600" height="400"/></center>
 
 下载后会得到一个exe应用程序文件，双击点开进行安装。
-
-<center><image src="images/5.png" width="600" height="400"/></center>
 
 ### 2.2.1项目创建
 
 打开微信开发者工具界面。
 
-<center><image src="images/6.png" width="600" height="600"/></center>
 
 点击可创建一个新的项目，选择不使用云服务，不选择模板。其中，AppID要在登录后的微信公众平台官网中，选择“开发与服务-开发设置”即可看到AppID。
 
-<center><image src="images/7.png" width="600" height="400"/></center>
 
 ### 2.2.2页面配置
 
-<center><image src="images/8.png" width="500" height="600"/></center>
 
 删除和修改文件，具体操作如下：  
 (1)删除 utils 文件夹及其内部所有内容。  
@@ -75,13 +66,7 @@
 
 ### 2.2.3导航栏设计
 
-小程序默认导航栏是黑底白字的效果,可以通过在 app.json 中对更改后的 app. json 文件对 window 属性进行重新配置来自定义导航栏效果。代码如下:
-
-<center><image src="images/9.png" width="600" height="400"/></center>
-
-效果如下：
-
-<center><image src="images/10.png" width="600" height="200"/></center>
+小程序默认导航栏是黑底白字的效果,可以通过在 app.json 中对更改后的 app. json 文件对 window 属性进行重新配置来自定义导航栏效果。
 
 ### 2.2.4页面设计
 
@@ -91,33 +76,21 @@
 - 微信昵称:\<text\>(文本)组件；
 - 按钮:\<button\>(按钮)组件。
 
-相关 WXML(pages/index/index. wxml) 代码片段如下:
-
-<center><image src="images/11.png" width="600" height="200"/></center>
+相关 WXML(pages/index/index. wxml) 代码。
 
 此时可以显示文本和按钮。由于尚未获得头像图片，所以无法显示内容。可以
 临时使用本地图片代替,在点击按钮获取微信头像后再更改。  
 在项目中新建自定义文件夹 images用于存放图片,右击此文件夹，选择“硬盘打开”,将本
 地图片logo.png复制、粘贴进去等待使用。  
 
-修改WXML页面的\<image\>组件如下:  
-
-<center><image src="images/12.png" width="600" height="200"/></center>
+修改WXML页面的\<image\>组件。
 
 上述代码中sre属性用于指定图片来源为根目录下 images 文件夹中的 logo. png 图片，mode属性表示图片随着指定的宽度自动拉伸高度以显示原图的正确比例。  
-在WXSS页面追加\<image\>和\<text\>组件的相关样式代码如下:  
-
-<center><image src="images/13.png" width="600" height="200"/></center>
-
-当前效果如图所示。
-
-<center><image src="images/14.png" width="400" height="700"/></center>
+在WXSS页面追加\<image\>和\<text\>组件的相关样式代码。
 
 ## 三、程序运行结果
 
-截图如下：
-
-<center><image src="images/14.png" width="400" height="700"/></center>
+截图
 
 
 
