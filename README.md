@@ -1,0 +1,130 @@
+# 2025年夏季《移动软件开发》实验报告
+
+
+
+<center>姓名：杨昕昱  学号：23020007142</center>
+
+| 姓名和学号？         | 杨昕昱，23020007142                  |
+| -------------------- | -------------------------------- |
+| 本实验属于哪门课程？ | 中国海洋大学25夏《移动软件开发》 |
+| 实验名称？           | 实验1：第一个微信小程序          |
+| 博客地址？           | https://blog.csdn.net/moaaaaaaaaa/article/details/150777988?spm=1001.2014.3001.5502                         |
+| Github仓库地址？     | https://github.com/iris-inu/25ex.git                         |
+
+（备注：将实验报告发布在博客、代码公开至 github 是 **加分项**，不是必须做的）
+
+
+
+## **一、实验目标**
+
+1、学习使用快速启动模板创建小程序的方法；2、学习不使用模板手动创建小程序的方法。
+
+
+
+## 二、实验步骤
+
+### 2.1.1注册开发者账号
+
+访问微信公众平台官网首页（mp.weixin.qq.com），点击右上角“立即注册”按钮进入账号类型选择页面，选择“小程序”。
+
+<center><image src="images/1.png" width="600" height="400"/></center>
+
+按照页面指引完成信息登记后，完成注册。
+
+<center><image src="images/2.png" width="600" height="400"/></center>
+
+### 2.1.2小程序信息完善
+
+账号注册完成后,需要完善小程序的基本信息。
+
+<center><image src="images/3.png" width="500" height="600"/></center>
+
+### 2.1.3小程序开发工具
+在微信公众平台官网可以找到微信开发者工具的下载。  
+
+<center><image src="images/4.png" width="600" height="400"/></center>
+
+下载后会得到一个exe应用程序文件，双击点开进行安装。
+
+<center><image src="images/5.png" width="600" height="400"/></center>
+
+### 2.2.1项目创建
+
+打开微信开发者工具界面。
+
+<center><image src="images/6.png" width="600" height="600"/></center>
+
+点击可创建一个新的项目，选择不使用云服务，不选择模板。其中，AppID要在登录后的微信公众平台官网中，选择“开发与服务-开发设置”即可看到AppID。
+
+<center><image src="images/7.png" width="600" height="400"/></center>
+
+### 2.2.2页面配置
+
+<center><image src="images/8.png" width="500" height="600"/></center>
+
+删除和修改文件，具体操作如下：  
+(1)删除 utils 文件夹及其内部所有内容。  
+(2)删除 pages 文件夹下的 logs 目录及其内部所有内容。  
+(3)删除 index.wxml 和 index. wxss 中的全部代码。  
+(4)删除 index.js 中的全部代码,并且输入关键词“page"找到第二个选项按回车键让其自动补全的函数。  
+(5)删除 app. wxss 中的全部代码。  
+(6)删除 app.js 中的全部代码，并且输人关键词“app”找到第一个选项按回车键让其自动
+补全函数。  
+
+此时模板代码就修改完毕了,如果未来开发者还想创建其他页面,只需在 app.json 的 pages 属性中追加声明路径即可自动生成对应的页面文件。
+
+### 2.2.3导航栏设计
+
+小程序默认导航栏是黑底白字的效果,可以通过在 app.json 中对更改后的 app. json 文件对 window 属性进行重新配置来自定义导航栏效果。代码如下:
+
+<center><image src="images/9.png" width="600" height="400"/></center>
+
+效果如下：
+
+<center><image src="images/10.png" width="600" height="200"/></center>
+
+### 2.2.4页面设计
+
+页面上主要包含3个内容，即微信头像、微信昵称和“点击获取头像和昵称”按钮。
+计划使用如下组件。
+- 微信头像:\<image\>(图像)组件；
+- 微信昵称:\<text\>(文本)组件；
+- 按钮:\<button\>(按钮)组件。
+
+相关 WXML(pages/index/index. wxml) 代码片段如下:
+
+<center><image src="images/11.png" width="600" height="200"/></center>
+
+此时可以显示文本和按钮。由于尚未获得头像图片，所以无法显示内容。可以
+临时使用本地图片代替,在点击按钮获取微信头像后再更改。  
+在项目中新建自定义文件夹 images用于存放图片,右击此文件夹，选择“硬盘打开”,将本
+地图片logo.png复制、粘贴进去等待使用。  
+
+修改WXML页面的\<image\>组件如下:  
+
+<center><image src="images/12.png" width="600" height="200"/></center>
+
+上述代码中sre属性用于指定图片来源为根目录下 images 文件夹中的 logo. png 图片，mode属性表示图片随着指定的宽度自动拉伸高度以显示原图的正确比例。  
+在WXSS页面追加\<image\>和\<text\>组件的相关样式代码如下:  
+
+<center><image src="images/13.png" width="600" height="200"/></center>
+
+当前效果如图所示。
+
+<center><image src="images/14.png" width="400" height="700"/></center>
+
+## 三、程序运行结果
+
+截图如下：
+
+<center><image src="images/14.png" width="400" height="700"/></center>
+
+
+
+## 四、问题总结与体会
+
+### 问题：无法获取不到用户名和密码。
+解决方法：利用了博客上分享的方法，还是无法解决，遂作罢。
+
+### 心得体会
+通过本次微信小程序实验，我掌握了创建小程序的方法：利用快速启动模板能快速上手，手动创建则深入理解了项目目录结构与配置逻辑。在操作中，我学会了微信开发者工具的使用，包括项目创建、代码编辑、实时预览和真机测试，也明晰了app.json等核心文件的作用，以及 image、button 等组件的基础用法。过程中虽因语法错误、路径问题遇阻，但通过查错调试，提升了问题解决能力，也体会到小程序开发中 “严谨编码” 与 “细节把控” 的重要性。
