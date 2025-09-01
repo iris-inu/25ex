@@ -226,3 +226,88 @@ index.js添加完后 data getWeather和 changeRegion 函数代码。
 ### 4.2 收获与体会
 
 参与本次实验，我掌握了微信小程序开发关键技能。学会申请和风天气API密钥，了解其免费用户权限与参数配置，能调用接口获取JSON格式天气数据。还掌握服务器域名配置，完成项目创建、页面布局设计，用wx.request接口实现天气数据获取与页面动态更新，理解小程序生命周期函数调用时机，提升了小程序开发与第三方服务对接的实践能力。
+
+
+# 2025年夏季《移动软件开发》实验报告
+
+
+## **一、实验目标**
+
+学习微信小程序云开发的基础知识。能够完成利用文本搜索的功能就好，图像识别、语音识别接口有时有问题，不强求。
+
+
+
+## 二、实验步骤
+
+### 2.1 注册百度智能云
+
+进入百度智能云，注册并实名认证。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/3229870c544d45389b85de3973cea80b.png#pic_center)
+
+创建一个图像识别应用，记录应用API KEY 和 SECRET KEY。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/90f7de9b59a54888bdbfa4ea79710165.png#pic_center)
+
+### 2.2 创建微信小程序
+
+进入微信开发者工具，导入垃圾分类小程序项目。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/076bfb8dfe944a2099ecba048057cb1f.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/e76491947cc44e6a95d883cb01ff622d.png#pic_center)
+
+
+### 2.3 云开发环境
+
+使用微信开发者工具创建一个云开发环境, 并复制环境ID。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/dc5c20a89f494b33b14307804f2cd4de.png#pic_center)
+
+
+### 2.4 添加百度 API KEY \ SECRET 和云环境 ID
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/82269a52ee0b4c9ca85fe3655ec525e7.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/96e10aebaaae4e7ea70a12abd40e2567.png#pic_center)
+
+### 2.5 部署云函数
+点击`cloudfuntions`文件夹展开子文件夹，依次分别右键点击展开的四个子文件夹并点击弹出的`上传并部署(不上传node_modules)`。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/121fa457ee74441fb5e578f151a4ca7f.png#pic_center)
+
+
+### 2.5 部署云数据库
+
+进入小程序开发工具的`云开发`，点击`数据库`创建集合`trash`, `type`。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/3e01f75334af4701ac08e6ff9b0eac70.png#pic_center)
+
+
+
+依次导入`trash.json`, `type.json`文件。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/9ee8d567272a4d31bcc8d2e56b75921c.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/310d66b6483d45d1b2291e14f3d64d05.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/0c2558b7a5864f83915e51115a9fb5c5.png#pic_center)
+
+
+部署完成。
+
+
+
+## 三、程序运行结果
+
+程序的最终运行结果，在文本搜索框搜索关键词，会检索出相应垃圾的垃圾分类结果。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/a39d770c82dc48a5977e48fce2b488fb.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/8493efbe458b487ebebca96a9baaab1b.png#pic_center)
+
+
+
+
+## 四、问题总结与体会
+
+### 4.1 问题总结
+问题：部署后发现 `FUNCTION_NOT_FOUND` 的错误。
+解决方法：经过排查发现，部署云函数时，没有将 `cloudfuntions` 文件夹所展开的所有子文件夹，全部点击`上传并部署(不上传node_modules)`。
+
+### 4.2 心得体会
+通过本次微信小程序云开发实验，我切实掌握了从环境搭建到功能实现的完整流程，不仅学会了百度智能云 API 配置、微信云开发环境创建与云函数部署，还成功解决了部署时遇到的 “FUNCTION_NOT_FOUND” 错误。整个过程让我明白，小程序开发需注重细节，比如云函数需逐个部署、配置参数要精准匹配，任何微小疏漏都可能导致功能异常。这次实践也让我对前后端协同与云服务应用有了更直观的认知，为后续复杂小程序开发打下了坚实基础，同时提升了自主排查问题与解决问题的能力。
