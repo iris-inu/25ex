@@ -1,18 +1,4 @@
-# 2025年夏季《移动软件开发》实验报告
-
-## 实验一
-
-<center>姓名：杨昕昱  学号：23020007142</center>
-
-| 姓名和学号？         | 杨昕昱，23020007142                  |
-| -------------------- | -------------------------------- |
-| 本实验属于哪门课程？ | 中国海洋大学25夏《移动软件开发》 |
-| 实验名称？           | 实验1：第一个微信小程序          |
-| 博客地址？           | https://blog.csdn.net/moaaaaaaaaa/article/details/150777988?spm=1001.2014.3001.5502                         |
-| Github仓库地址？     | https://github.com/iris-inu/25ex.git                         |
-
-（备注：将实验报告发布在博客、代码公开至 github 是 **加分项**，不是必须做的）
-
+# 2025年夏季《移动软件开发》实验一实验报告
 
 
 ## **一、实验目标**
@@ -27,30 +13,47 @@
 
 访问微信公众平台官网首页（mp.weixin.qq.com），点击右上角“立即注册”按钮进入账号类型选择页面，选择“小程序”。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/d0b2d743bc4f4b5bbfc4d8a1efa9118e.png#pic_center)
+
 
 按照页面指引完成信息登记后，完成注册。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/d42675235f114b57a925e520b61df868.png#pic_center)
 
 
 ### 2.1.2小程序信息完善
 
 账号注册完成后,需要完善小程序的基本信息。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/f89925bd45304a9e8202d3b9a22be4d7.png#pic_center)
+
 
 ### 2.1.3小程序开发工具
 在微信公众平台官网可以找到微信开发者工具的下载。  
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/6754107d1bdf4b3f9a3faf2816d4bf7f.png#pic_center)
+
 
 下载后会得到一个exe应用程序文件，双击点开进行安装。
+
+![](https://i-blog.csdnimg.cn/direct/09575b0ad762452094bba5796e5ec1ac.png#pic_center)
+
 
 ### 2.2.1项目创建
 
 打开微信开发者工具界面。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/f0d023566a8046919a007f82fd10a1f8.png#pic_center)
+
 
 点击可创建一个新的项目，选择不使用云服务，不选择模板。其中，AppID要在登录后的微信公众平台官网中，选择“开发与服务-开发设置”即可看到AppID。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/74e5daeb50aa41469443578042334bbc.png#pic_center)
+
 
 ### 2.2.2页面配置
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/df077e1c3e6147269415f43339aec45d.png#pic_center)
 
 
 删除和修改文件，具体操作如下：  
@@ -66,7 +69,14 @@
 
 ### 2.2.3导航栏设计
 
-小程序默认导航栏是黑底白字的效果,可以通过在 app.json 中对更改后的 app. json 文件对 window 属性进行重新配置来自定义导航栏效果。
+小程序默认导航栏是黑底白字的效果,可以通过在 app.json 中对更改后的 app. json 文件对 window 属性进行重新配置来自定义导航栏效果。代码如下:
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/ed713aa4d4164ecf8be466389dadbe0f.png#pic_center)
+
+
+效果如下：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/d219ad8bfe7041ab83952be8dfcf0268.png#pic_center)
 
 ### 2.2.4页面设计
 
@@ -76,47 +86,52 @@
 - 微信昵称:\<text\>(文本)组件；
 - 按钮:\<button\>(按钮)组件。
 
-相关 WXML(pages/index/index. wxml) 代码。
+相关 WXML(pages/index/index. wxml) 代码片段如下:
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/6ee761a565b64edf8fd410116595554b.png#pic_center)
+
 
 此时可以显示文本和按钮。由于尚未获得头像图片，所以无法显示内容。可以
 临时使用本地图片代替,在点击按钮获取微信头像后再更改。  
 在项目中新建自定义文件夹 images用于存放图片,右击此文件夹，选择“硬盘打开”,将本
 地图片logo.png复制、粘贴进去等待使用。  
 
-修改WXML页面的\<image\>组件。
+修改WXML页面的\<image\>组件如下:  
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/a42173414c674e77ade8058d0fbcf8c2.png#pic_center)
+
 
 上述代码中sre属性用于指定图片来源为根目录下 images 文件夹中的 logo. png 图片，mode属性表示图片随着指定的宽度自动拉伸高度以显示原图的正确比例。  
-在WXSS页面追加\<image\>和\<text\>组件的相关样式代码。
+在WXSS页面追加\<image\>和\<text\>组件的相关样式代码如下:  
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/18eb96bfea5b4e228debb3b4bb6ffbcf.png#pic_center)
+
+
+当前效果如图所示。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/543ef5278f2a414ca405240abb916e85.png#pic_center)
+
 
 ## 三、程序运行结果
 
-截图
+截图如下：
+
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/b0660102647e4a1ca0bc503bb3b2dd2b.png#pic_center)
 
 
 
 ## 四、问题总结与体会
 
-### 问题：无法获取不到用户名和密码。
+### 问题
+问题：无法获取不到用户名和密码。
 解决方法：利用了博客上分享的方法，还是无法解决，遂作罢。
 
 ### 心得体会
 通过本次微信小程序实验，我掌握了创建小程序的方法：利用快速启动模板能快速上手，手动创建则深入理解了项目目录结构与配置逻辑。在操作中，我学会了微信开发者工具的使用，包括项目创建、代码编辑、实时预览和真机测试，也明晰了app.json等核心文件的作用，以及 image、button 等组件的基础用法。过程中虽因语法错误、路径问题遇阻，但通过查错调试，提升了问题解决能力，也体会到小程序开发中 “严谨编码” 与 “细节把控” 的重要性。
 
 
-
-## 实验二
-
-
-| 姓名和学号？         | 杨昕昱，23020007142                  |
-| -------------------- | -------------------------------- |
-| 本实验属于哪门课程？ | 中国海洋大学25夏《移动软件开发》 |
-| 实验名称？           | 实验2：天气查询小程序          |
-| 博客地址？           | https://blog.csdn.net/moaaaaaaaaa/article/details/150861119?spm=1001.2014.3001.5501                         |
-| Github仓库地址？     | https://github.com/iris-inu/25ex.git                          |
-
-（备注：将实验报告发布在博客、代码公开至 github 是 **加分项**，不是必须做的）
-
-
+# 2025年夏季《移动软件开发》实验二实验报告
 
 ## **一、实验目标**
 
@@ -131,15 +146,21 @@
 
 进入“和风天气”官网注册账号。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/6d8a9dc966074354b2afa411afd1c14d.png#pic_center)
 
 登录“和风天气”，进入控制台。
 
-在设置里，找到API Host。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/5b9b1c72ecaa490f9bbdbee91f1d570f.png#pic_center)
 
+
+在设置里，找到API Host。
 
 #### 2.1.2 API秘钥
 
 在项目管理中，创建项目并创建凭照，选择API KEY，保存API KEY。
+
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/af90e4f491324e9a82f00537181522e0.png#pic_center)
 
 
 #### 2.1.3 API请求
@@ -148,8 +169,13 @@
 
 城市搜索API请求示例。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/56b9b1354bb2471780198eb992ffa0b0.png#pic_center)
+
 
 实时天气API请求示例。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/605fd28d39ff4d338eb36b1f2c9b2866.png#pic_center)
+
 
 
 ### 2.2 小程序设计
@@ -159,6 +185,8 @@
 打开微信开发者工具界面。点击可创建一个新的项目，选择不使用云服务，不选择模板。其中，AppID要在登录后的微信公众平台官网中，选择“开发与服务-开发设置”即可看到AppID。
 
 ### 2.2.2 页面配置
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/009e6f6ec3004097a4aadd1a8c51c2cb.png#pic_center)
 
 
 删除和修改文件，具体操作如下：  
@@ -176,13 +204,29 @@
 
 在app.json 中添加背景颜色等信息，修改界面样式。
 
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/521336425e574d71bc01234b28b31a7d.png#pic_center)
+
+
 在index.wxss 文件中添加小程序信息，包括地区名、温度、天气等，并添加恰当的wxss样式，调整页面布局大小等。
 
 地区初始化为“北京市，北京市，东城区”，N/A图片表示暂时没有天气信息，其他信息为0。
 
-index.wxml代码。
+index.wxml代码如下：
 
-index.wxss代码。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/923901e59fb647e1a3c08cd8b1baca07.png#pic_center)
+
+index.wxss代码如下：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/7a6c7b6d8c6a4cc7853c2a4f8608ad1f.png#pic_center)
+
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/b05322a25f6546c491d690f5757d3cf2.png#pic_center)
+
+
+效果如下：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/daa8af14bda940518b76fb3a3a465da5.png#pic_center)
+
 
 
 ### 2.3 逻辑实现
@@ -192,9 +236,16 @@ index.wxss代码。
 在index.wxml的“选择地区”里选择picker中的region,并添加bindchange函数，写入index.js文件中。picker为从底部弹起的滚动选择器，本程序选用其中的省市区选择器；
 bindchange为函数，可以更换城市信息。
 
-index.wxml更改后代码。
+index.wxml更改后代码如下：
 
-index.js代码。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/996dab4592854554931b64d6e50da919.png#pic_center)
+
+
+index.js代码如下：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/23318b53185844be8a38a501c17bebdc.png#pic_center)
+
+
 #### 2.3.2 下载图标
 
 实验中需要的天气图片、utils.js 下载地址为：https://gaopursuit.oss-cnbeijing.aliyuncs.com/2022/demo2_file.zip 。下载到images中。
@@ -202,19 +253,37 @@ index.js代码。
 #### 2.3.3 添加request合法域名
 
 录微信公众平台，在开发管理的服务器域名，添加 https://p52tunh8tj.re.qweatherapi.com 为合法域名。
-
 #### 2.3.4 更改变量
 
 index.wxml文件中将天气信息改为变量，并在index.js 文件中添加 getWeather 函数，获取任意地区的天气信息
 
-index.wxml改后代码。
+index.wxml改后代码如下：
 
-index.js添加完后 data getWeather和 changeRegion 函数代码。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/e89fa03ea889458b94c1c525afee56e6.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/b6faf3c6dff84955bd14eef9000fade1.png#pic_center)
+
+
+index.js添加完后 data getWeather和 changeRegion 函数代码如下：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/6cabc44f9fb143b499b6b12bab5e321d.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/07218377b63943828b7b88d96536dbf7.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/76c8494b80024054b1a8a09d4ac83472.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/ea9311d3a1f94ff68a52a7e5a6f0ee6a.png#pic_center)
+
+
+效果如下：
 
 
 ## 三、程序运行结果
 
-如图
+切换城市前后：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/54474e28e2014ee5830646e4b21a0699.png#pic_center)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/c9431163c8a6423b8addf1275c4f8d30.png#pic_center)
+
+
+
+
 
 ## 四、问题总结与体会
 
@@ -228,7 +297,10 @@ index.js添加完后 data getWeather和 changeRegion 函数代码。
 参与本次实验，我掌握了微信小程序开发关键技能。学会申请和风天气API密钥，了解其免费用户权限与参数配置，能调用接口获取JSON格式天气数据。还掌握服务器域名配置，完成项目创建、页面布局设计，用wx.request接口实现天气数据获取与页面动态更新，理解小程序生命周期函数调用时机，提升了小程序开发与第三方服务对接的实践能力。
 
 
-# 2025年夏季《移动软件开发》实验报告
+
+
+
+# 2025年夏季《移动软件开发》实验三实验报告
 
 
 ## **一、实验目标**
