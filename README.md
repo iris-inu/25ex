@@ -383,3 +383,276 @@ index.js添加完后 data getWeather和 changeRegion 函数代码如下：
 
 ### 4.2 心得体会
 通过本次微信小程序云开发实验，我切实掌握了从环境搭建到功能实现的完整流程，不仅学会了百度智能云 API 配置、微信云开发环境创建与云函数部署，还成功解决了部署时遇到的 “FUNCTION_NOT_FOUND” 错误。整个过程让我明白，小程序开发需注重细节，比如云函数需逐个部署、配置参数要精准匹配，任何微小疏漏都可能导致功能异常。这次实践也让我对前后端协同与云服务应用有了更直观的认知，为后续复杂小程序开发打下了坚实基础，同时提升了自主排查问题与解决问题的能力。
+
+
+# 2025年夏季《移动软件开发》实验五实验报告
+
+
+
+## **一、实验目标**
+
+1、学习使用快速启动模板创建小程序的方法；  
+2、学习不使用模板手动创建小程序的方法。
+
+
+
+## 二、实验步骤
+### 2.1 工具准备
+下载并安装最新版DevEco Studio 。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/25c9a5c5daf84c6695a90baa0ca46f04.png)
+
+### 2.2 创建ArkTS工程
+1. 单击Create Project创建工程，选择Application应用开发（本文以应用开发为例，Atomic Service对应为元服务开发），选择模板Empty Ability，单击Next进行下一步配置。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/d1444313847846138717c18537987b3a.png)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/7b47be1bad5e4688bf732d77269bf983.png)
+
+
+
+3. 进入配置工程界面，Compatible SDK表示兼容的最低API Version，此处以选择5.1.1(19)为例，其他参数保持
+默认设置即可。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/4453ccf02c724f7c8bc11c6bec6f6eda.png)
+
+
+4. 单击Finish，工具会自动生成示例代码和相关资源，等待工程创建完成。
+
+### 2.3 ArkTS工程目录结构（Stage模型）
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/0407328d0af0490f8f1aa8eb57a46899.png)
+
+### 2.4 构建第一个页面
+1. 使用文本组件。  
+工程同步完成后，在Project窗口，单击entry > src > main > ets > pages，打开Index.ets文件，将页面从
+RelativeContainer相对布局修改成Row/Column线性布局。
+
+```ArkTs
+// Index.ets
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
+
+2. 添加按钮。  
+在默认页面基础上，我们添加一个Button组件，作为按钮响应用户onClick事件，从而实现跳转到另一个页面。
+
+```ArkTs
+// Index.ets
+@Entry
+@Component
+struct Index {
+@State message: string = 'Hello World';
+build() {
+Row() {
+Column() {
+Text(this.message)
+.fontSize(50)
+.fontWeight(FontWeight.Bold)
+// 添加按钮，以响应用户onClick事件
+Button() {
+Text('Next')
+.fontSize(30)
+.fontWeight(FontWeight.Bold)
+}
+.type(ButtonType.Capsule)
+.margin({
+top: 20
+})
+.backgroundColor('#0D9FFB')
+.width('40%')
+.height('5%')
+}
+.width('100%')
+}
+.height('100%')
+}
+}
+```
+3. 在编辑窗口右上角的侧边工具栏，单击Previewer，打开预览器。第一个页面效果如下图所示：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/3db0056b947145e1a58050fa6305c7b4.png)
+
+### 2.5 构建第二个页面
+1. 创建第二个页面。
+- 新建第二个页面文件。在Project窗口，打开entry > src > main > ets，右键单击pages文件夹，选择New > ArkTS File，命名为Second，单击回车键。
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/8cf9884317df4fe89fd5b8c3d074989c.png)
+
+  
+- 配置第二个页面的路由。在Project窗口，打开entry > src > main > resources > base > profile，在main_pages.json文件中的"src"下配置第二个页面的路由"pages/Second"。
+
+```javascript
+{
+"src": [
+"pages/Index",
+"pages/Second"
+]
+}
+```
+
+2. 添加文本及按钮。  
+参照第一个页面，在第二个页面添加Text组件、Button组件等，并设置其样式。
+
+```ArkTs
+// Second.ets
+@Entry
+@Component
+struct Second {
+  @State message: string = 'Hi there';
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        Button() {
+          Text('Back')
+            .fontSize(30)
+            .fontWeight(FontWeight.Bold)
+        }
+        .type(ButtonType.Capsule)
+        .margin({
+          top: 20
+        })
+        .backgroundColor('#0D9FFB')
+        .width('40%')
+        .height('5%')
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+
+```
+
+### 2.6 实现页面间的跳转
+1. 第一个页面跳转到第二个页面。
+在第一个页面中，跳转按钮绑定onClick事件，单击按钮时跳转到第二页。
+
+
+```ArkTs
+// Index.ets
+import { BusinessError } from '@kit.BasicServicesKit';
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+  build() {
+    Row() {
+      Column() {
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+        // 添加按钮，以响应用户onClick事件
+        Button() {
+          Text('Next')
+            .fontSize(30)
+            .fontWeight(FontWeight.Bold)
+        }
+        .type(ButtonType.Capsule)
+        .margin({
+          top: 20
+        })
+        .backgroundColor('#0D9FFB')
+        .width('40%')
+        .height('5%')
+        // 跳转按钮绑定onClick事件，单击时跳转到第二页
+        .onClick(() => {
+          console.info(`Succeeded in clicking the 'Next' button.`)
+          // 获取UIContext
+          let uiContext: UIContext = this.getUIContext();
+          let router = uiContext.getRouter();
+          // 跳转到第二页
+          router.pushUrl({ url: 'pages/Second' }).then(() => {
+            console.info('Succeeded in jumping to the second page.')
+          }).catch((err: BusinessError) => {
+            console.error(`Failed to jump to the second page. Code is ${err.code},
+message is ${err.message}`)
+          })
+        })
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
+
+2. 第二个页面返回到第一个页面。
+在第二个页面中，返回按钮绑定onClick事件，单击按钮时返回到第一页。
+
+```ArkTs
+// Second.ets
+import { BusinessError } from '@kit.BasicServicesKit';
+@Entry
+@Component
+struct Second {
+@State message: string = 'Hi there';
+build() {
+Row() {
+Column() {
+Text(this.message)
+.fontSize(50)
+.fontWeight(FontWeight.Bold)
+Button() {
+Text('Back')
+.fontSize(30)
+.fontWeight(FontWeight.Bold)
+}
+.type(ButtonType.Capsule)
+.margin({
+top: 20
+})
+.backgroundColor('#0D9FFB')
+.width('40%')
+.height('5%')
+// 返回按钮绑定onClick事件，单击按钮时返回到第一页
+.onClick(() => {
+console.info(`Succeeded in clicking the 'Back' button.`)
+// 获取UIContext
+let uiContext: UIContext = this.getUIContext();
+let router = uiContext.getRouter();
+try {
+// 返回第一页
+router.back()
+console.info('Succeeded in returning to the first page.')
+} catch (err) {
+let code = (err as BusinessError).code;
+let message = (err as BusinessError).message;
+console.error(`Failed to return to the first page. Code is ${code},
+message is ${message}`)
+}
+})
+}
+.width('100%')
+}
+.height('100%')
+}
+}
+```
+
+3. 打开Index.ets文件，单击预览器中的 按钮进行刷新。效果如下图所示：
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/552f56791e4c43c4b77ad4f89b5fcd9b.png)
+
+
+## 三、程序运行结果
+
+程序的最终运行结果及截图。
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/3db0056b947145e1a58050fa6305c7b4.png)
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/44a59767e621480e847395d9d6953698.png)
+
+## 四、问题总结与体会
+通过本次实验，我成功构建了首个HarmonyOS应用，掌握了ArkTS声明式开发的核心流程。实践中，我深入理解了数据驱动UI、组件化布局和页面路由跳转的原理。DevEco Studio预览器的实时反馈极大提升了开发效率。这次实践让我对鸿蒙应用开发有了直观认识，为后续学习奠定了坚实基础。
